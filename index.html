@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+<!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="icon" type="image/png" href="./fav.png">
+    <!-- Author Meta -->
+    <meta name="author" content="YWAM Lagos">
+    <!-- Meta Description -->
+    <meta name="description" content="Welcome To The Portfolio Site Of ARINZE ATUSIUBA - Freelance Video Editor, Animator, Cinematographer C.E.O. Swagalicious Flikz.">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="Videographer, Freelance Video Editor, Video Editor, Cinematographer, Director, ARINZE ATUSIUBA, Youtube Video Editor">
+    <!-- meta character set -->
+    <meta name="google-site-verification" content="VD82S2vHV5jc4uvSf8OhA_AvCSqY3Okmkf2miYEXCvw" />
+    <title>ARINZE ATUSIUBA Freelance Video Editor, Graphic Designer, Product Designer.</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+
+ <!-- Showreel embed styles -->
+<style>
+    .showreel-section {
+        position: relative;
+        background:
+            radial-gradient(circle at 50% 100%, rgba(170, 0, 255, 0.45) 0%, rgba(90, 0, 150, 0.25) 30%, transparent 65%),
+            linear-gradient(180deg, #05000d 0%, #0b0018 45%, #19002f 75%, #30004f 100%);
+        overflow: hidden;
+    }
+
+    .showreel-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+            linear-gradient(rgba(170, 0, 255, 0.12) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(170, 0, 255, 0.12) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+        opacity: 0.6;
+    }
+
+    .showreel-section .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    .showreel-section h2 {
+        margin-bottom: 15px;
+        color: #fff;
+    }
+
+    .showreel-section p {
+        max-width: 600px;
+        margin: 0 auto 35px;
+        color: #d8c9e8;
+    }
+
+    .showreel__video-wrap {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border-radius: 8px;
+        border: 1px solid rgba(190, 50, 255, 0.4);
+        box-shadow:
+            0 0 30px rgba(170, 0, 255, 0.3),
+            0 15px 40px rgba(0, 0, 0, 0.5);
+        background: #08000f;
+    }
+
+    /* Thumbnail */
+    .showreel__thumbnail {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    .showreel__thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Dark overlay */
+    .showreel__thumbnail::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.25);
+        transition: 0.3s ease;
+    }
+
+    .showreel__thumbnail:hover::after {
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    /* Play button */
+    .showreel__play {
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 75px;
+        height: 75px;
+
+        border: 2px solid rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+
+        background: rgba(150, 0, 255, 0.85);
+        color: #fff;
+
+        font-size: 24px;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transition: all 0.3s ease;
+        box-shadow: 0 0 30px rgba(180, 0, 255, 0.6);
+    }
+
+    .showreel__play i {
+        margin-left: 4px;
+    }
+
+    .showreel__play:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+        background: #a900ff;
+        box-shadow: 0 0 45px rgba(200, 0, 255, 0.9);
+    }
+
+    /* YouTube iframe */
+    .showreel__video-wrap iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: none;
+    }
+</style>
+
+
+</head>
+
+<script>
+    function loadShowreel() {
+        const thumbnail = document.getElementById("showreelThumbnail");
+        const video = document.getElementById("showreelVideo");
+
+        thumbnail.style.display = "none";
+        video.style.display = "block";
+
+        video.src =
+            "https://www.youtube.com/embed/qkk2VeAt8pI?autoplay=1&rel=0";
+    }
+</script>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="header__nav__option">
+                        <nav class="header__nav__menu mobile-menu">
+                            <ul>
+                                <li class="active"><a href="./index.html">Home</a></li>
+                                <li><a href="./about.html">About</a></li>
+                                <li><a href="./portfolio.html">Portfolio</a></li>
+                                <li><a href="./services.html">Services</a></li>
+
+                                <li><a href="./contact.html">Contact</a></li>
+                            </ul>
+                        </nav>
+                       <div class="header__nav__social">
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/share/18Sbp6wxn5/" target="_blank">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <!-- X -->
+    <a href="https://x.com/ArinzeAtusiuba?t=dPLT6wP3ZwTJ8282XaZNYg&s=09" target="_blank">
+        <i class="fa-brands fa-x-twitter"></i>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/arinzeatusiuba/" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <!-- YouTube -->
+    <a href="https://www.youtube.com/@arinzeatusiuba" target="_blank">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/arinze-atusiuba-9a7794232/" target="_blank">
+        <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+</div>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero">
+        <div class="hero__slider owl-carousel">
+            <div class="hero__item set-bg" data-setbg="img/hero/hero-1.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="hero__text">
+                                <span>ARINZE ATUSIUBA</span>
+                                <h2>Video Editor</h2>
+                                <a href="./about.html" class="primary-btn">See more about me</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__item set-bg" data-setbg="img/hero/hero-1.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="hero__text">
+                                <span>ARINZE ATUSIUBA</span>
+                                <h2>PRODUCT DESIGNER</h2>
+                                <a href="./about.html" class="primary-btn">See more about me</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__item set-bg" data-setbg="img/hero/hero-1.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="hero__text">
+                                <span>ARINZE ATUSIUBA</span>
+                                <h2>Graphic Designer</h2>
+                                <a href="./about.html" class="primary-btn">See more about me</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Services Section Begin -->
+    <section class="services spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="services__title">
+                        <div class="section-title">
+                            <span>my services</span>
+                            <h2>What i do?</h2>
+                        </div>
+                        <p>I am an experienced Upwork Top Rated creative and technical talent who can take your brief and turn it into an exciting and engaging video experience.</p>
+                        <a href="./services.html" class="primary-btn">View all my services</a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="services__item">
+                                <div class="services__item__icon">
+                                    <img src="img/icons/si-1.png" alt="">
+                                </div>
+                                <h4>Video Editing</h4>
+                                <p>I am passionate about creating excellent visuals that dazzle the mind. I work with individuals, artists, companies, and organizations,
+                                 bringing your most beautiful ideas to life.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="services__item">
+                                <div class="services__item__icon">
+                                    <img src="img/icons/si-2.png" alt="">
+                                </div>
+                                <h4>Graphic Design</h4>
+                                <p>My expertise and experience in Graphic Design are extensive and far-reaching to help you tell the story about your products/services in a compelling and visually appealing way,
+                                 It is always our pleasure to stun our clients by going beyond their expectations.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="services__item">
+                                <div class="services__item__icon">
+                                    <img src="img/icons/si-3.png" alt="">
+                                </div>
+                                <h4>Product Design</h4>
+                                <p>Our UI/UX design services span across web, mobile, and digital product experiences. Our expertise includes user research, wireframing, prototyping, responsive web design, mobile app design, design systems, and intuitive user interfaces. We create visually engaging, user-centered digital experiences that are functional, accessible, and tailored to meet your business goals and users’ needs.
+</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="services__item">
+                                <div class="services__item__icon">
+                                    <img src="img/icons/si-4.png" alt="">
+                                </div>
+                                <h4>Social media Management</h4>
+                                <p>I know that managing a successful social media presence can seem overwhelming, but that’s where I come in. I’ll take care of the process from strategy and content planning to posting, engagement, and performance tracking. I’ll work closely with you every step of the way to ensure your brand stays consistent, engaging, and visible across your social media platforms.
+ </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+
+<!-- Showreel Section Begin -->
+<section class="showreel-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+
+                <h2>My Showreel</h2>
+
+                <p>
+                   A glimpse into how I bring stories to life through video editing, motion, sound, and cinematic visuals.
+                </p>
+
+                <div class="showreel__video-wrap">
+
+                    <!-- YouTube Thumbnail -->
+                    <div class="showreel__thumbnail" id="showreelThumbnail">
+
+                        <img
+                            src="/img/PRO.png"
+                            alt="ARINZE ATUSIUBA Showreel">
+
+                        <button class="showreel__play" onclick="loadShowreel()">
+                            <i class="fa fa-play"></i>
+                        </button>
+
+                    </div>
+
+                    <!-- YouTube Video -->
+                    <iframe
+                        id="showreelVideo"
+                        src=""
+                        title="ARINZE ATUSIUBA Showreel"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                        loading="lazy">
+                    </iframe>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Showreel Section End -->
+
+
+    <!-- Work Section Begin -->
+    <section class="work">
+        <div class="work__gallery">
+            <div class="grid-sizer"></div>
+            <div class="work__item wide__item set-bg" data-setbg="img/work/work-1.jpg">
+                <a href="https://youtu.be/YNqj6bT16nk?si=ZcZd2EsPTVCAUwBu" class="play-btn video-popup"><i
+                        class="fa fa-play"></i></a>
+                <div class="work__item__hover">
+                    <h4>Top 10 Styled Video</h4>
+                    <ul>
+                        <li>Tech</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="work__item small__item set-bg" data-setbg="img/work/work-2.jpg">
+                <a href="https://www.youtube.com/watch?v=e_jr12_kyL0" class="play-btn video-popup"><i
+                        class="fa fa-play"></i></a>
+            </div>
+            <div class="work__item small__item set-bg" data-setbg="img/work/work-3.jpg">
+                <a href="https://www.youtube.com/watch?v=GAmyeBVy6P0" class="play-btn video-popup"><i
+                        class="fa fa-play"></i></a>
+            </div>
+            <div class="work__item large__item set-bg" data-setbg="img/work/work-4.jpg">
+                <a href="https://www.youtube.com/watch?v=84p439Whn1Q" class="play-btn video-popup"><i
+                        class="fa fa-play"></i></a>
+                <div class="work__item__hover">
+                    <h4>Top 10 Styled Video</h4>
+                    <ul>
+                        <li>Pop Culture</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="work__item small__item set-bg" data-setbg="img/work/work-5.jpg">
+                <a href="https://www.youtube.com/watch?v=GOhfcXgxpQk" class="play-btn video-popup"><i
+                        class="fa fa-play"></i></a>
+            </div>
+            <div class="work__item small__item set-bg" data-setbg="img/work/work-6.jpg">
+                <a href="https://www.youtube.com/watch?v=HLNFpYEf9qA" class="play-btn video-popup"><i
+                        class="fa fa-play"></i></a>
+            </div>
+            <div class="work__item wide__item set-bg" data-setbg="img/work/work-7.jpg">
+                <a href="https://www.youtube.com/watch?v=1xpemp1oXRo" class="play-btn video-popup"><i
+                        class="fa fa-play"></i></a>
+                <div class="work__item__hover">
+                    <h4>Commercials, Interview, Shortfilms</h4>
+                    <ul>
+                        <li>Videography</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Work Section End -->
+
+    <!-- Counter Section Begin -->
+    <section class="counter">
+        <div class="container">
+            <div class="counter__content">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="counter__item">
+                            <div class="counter__item__text">
+                                <img src="img/icons/ci-1.png" alt="">
+                                <h2 class="counter_num">623</h2>
+                                <p>Completed Videos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="counter__item second__item">
+                            <div class="counter__item__text">
+                                <img src="img/icons/ci-2.png" alt="">
+                                <h2 class="counter_num">121</h2>
+                                <p>Happy clients</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="counter__item third__item">
+                            <div class="counter__item__text">
+                                <img src="img/icons/ci-3.png" alt="">
+                                <h2 class="counter_num">80</h2>
+                                <p>Prospective clients</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="counter__item four__item">
+                            <div class="counter__item__text">
+                                <img src="img/icons/ci-4.png" alt="">
+                                <h2 class="counter_num">302</h2>
+                                <p>Completed Projects</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Counter Section End -->
+
+   <!-- Team Section Begin -->
+<section class="team spad set-bg" data-setbg="img/team-bg.jpg">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title team__title">
+                    <span>Meet</span>
+                    <h2>ARINZE</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-3 col-md-6 col-sm-6 p-0">
+                <div class="team__item set-bg" data-setbg="img/team/team-1.jpg">
+                    <div class="team__item__text">
+                        <h4>ARINZE ATUSIUBA</h4>
+                        <p>Video Editor, Animator, Videographer</p>
+
+                        <div class="footer__top__social">
+                            <a href="https://www.facebook.com/share/18Sbp6wxn5/" target="_blank">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+
+                            <a href="https://x.com/ArinzeAtusiuba?t=dPLT6wP3ZwTJ8282XaZNYg&s=09" target="_blank">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+
+                            <a href="https://www.instagram.com/arinzeatusiuba/" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 p-0">
+                <div class="team__item team__item--second set-bg" data-setbg="img/team/team-2.jpg">
+                    <div class="team__item__text">
+                        <h4>ARINZE ATUSIUBA</h4>
+                        <p>Video Editor, Animator, Videographer</p>
+
+                        <div class="footer__top__social">
+                            <a href="https://www.facebook.com/share/18Sbp6wxn5/" target="_blank">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+
+                            <a href="https://x.com/ArinzeAtusiuba?t=dPLT6wP3ZwTJ8282XaZNYg&s=09" target="_blank">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+
+                            <a href="https://www.instagram.com/arinzeatusiuba/" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12 p-0">
+                <div class="team__btn">
+                    <a href="https://www.upwork.com/freelancers/~01e4a0232ac718748f?mp_source=share"
+                       class="primary-btn"
+                       target="_blank">
+                        Top Rated Freelancer
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Team Section End -->
+
+
+    <!-- Call To Action Section Begin -->
+    <section class="callto spad set-bg" data-setbg="img/callto-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="callto__text">
+                        <h2>Fresh Ideas, Fresh Moments Giving Wings to your Stories.</h2>
+                        <p>Top Rated Freelancer</p>
+                        <a href="./contact.html">Start your stories</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Call To Action Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer__top__logo">
+                            <a href="#"><img src="img/logo.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer__top__social">
+                            <a href="https://www.facebook.com/share/18Sbp6wxn5/" target="_blank">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+                            <a href="https://x.com/ArinzeAtusiuba?t=dPLT6wP3ZwTJ8282XaZNYg&s=09" target="_blank">
+        <i class="fa-brands fa-x-twitter"></i>
+                            <a href="https://www.instagram.com/arinzeatusiuba/" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__option">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="footer__option__item">
+                            <h5>About Me</h5>
+                            <p>ARINZE ATUSIUBA is an experienced Verified Freelancer with over 10 years experience in the world of video.<br>
+                            Having Video Production/Editing as a calling satisfies my pocket as well as my heart since it has been my obsession for a considerable length of time.</p>
+                            <a href="./about.html" class="read__more">Read More <span class="arrow_right"></span></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 col-sm-3">
+                        <div class="footer__option__item">
+                            <h5>Our work</h5>
+                            <ul>
+                                <li><a href="https://www.upwork.com/freelancers/~01e4a0232ac718748f?mp_source=share">Upwork Profile</a></li>
+                                <li><a href="./contact.html">Contact me</a></li>
+                                <li><a href="./portfolio.html">My Works</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+            <div class="footer__copyright">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p class="footer__copyright__text">Copyright &copy;
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>
+                            All rights reserved
+                        </p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
